@@ -1,0 +1,7 @@
+= simple_form_for @link, html: { class: 'link_form' } do |f|
+  .form-group
+    = f.input :title
+    = f.input :url
+    = f.button :submit, class: 'btn btn-primary'
+
+= link_to 'Back to Links', links_path
