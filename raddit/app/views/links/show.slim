@@ -1,1 +1,6 @@
-p show 1
+p = @link.title
+p = @link.url
+
+
+= link_to 'Delete link', link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+= link_to 'Back to All', links_path

@@ -1,3 +1,7 @@
 h1 Listing links
 
+- @links.each do |link|
+    p = link.title
+    = link_to 'Edit link', edit_link_path(link)
+
 = link_to 'Add New Link', new_link_path
