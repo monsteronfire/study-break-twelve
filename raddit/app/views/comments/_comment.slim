@@ -1,0 +1,6 @@
+- @link.comments.each do |c|
+  p = c.user.email
+  p = c.body
+
+  - if c.user == current_user
+    = link_to "Delete", c, method: :delete, data: { confirm: "Are you sure?" }

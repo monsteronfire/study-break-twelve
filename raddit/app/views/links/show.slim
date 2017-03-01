@@ -5,3 +5,13 @@ p = @link.url
 
 .action-band
   = link_to 'Back to All', links_path
+
+h2
+  = @link.comments.count
+  | Comments
+
+= render 'comments/comment'
+
+= simple_form_for [@link, Comment.new] do |f|
+  = f.text_area :body
+  = f.button :submit, class: 'btn btn-default'
