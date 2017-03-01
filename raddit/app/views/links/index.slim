@@ -1,5 +1,6 @@
-.action-band
-  = link_to 'Add New Link', new_link_path, class: 'btn btn-primary'
+- if user_signed_in?
+  .action-band
+    = link_to 'Add New Link', new_link_path, class: 'btn btn-primary'
 
 h1 All your link are belong to us
 
