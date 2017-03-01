@@ -1,7 +1,19 @@
-h1 Listing links
+.action-band
+  = link_to 'Add New Link', new_link_path, class: 'btn btn-primary'
 
-- @links.each do |link|
-    p = link.title
-    = link_to 'Edit link', edit_link_path(link)
+h1 All your link are belong to us
 
-= link_to 'Add New Link', new_link_path
+section
+  - @links.each do |link|
+      table
+        tr
+          td
+            = link_to  link.title, link_path(link)
+          td
+            = link_to 'Edit', edit_link_path(link)
+          td
+            = link_to "upvote", like_link_path(link), method: :put
+            = link.get_upvotes.size
+          td
+            = link_to "downvote", dislike_link_path(link), method: :put
+            = link.get_downvotes.size

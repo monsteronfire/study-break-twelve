@@ -28,6 +28,8 @@ gem 'bootstrap'
 gem 'rails-assets-tether'
 gem 'devise'
 gem 'carrierwave'
+gem 'acts_as_votable'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

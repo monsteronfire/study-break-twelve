@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:show, :edit, :update, :destroy]
+  before_action :set_link, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -39,12 +39,22 @@ class LinksController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @link.upvote_by current_user
+    redirect_to links_path
+  end
+
+  def downvote
+    @link.downvote_by current_user
+    redirect_to links_path
+  end
+
   private
   def set_link
     @link = Link.find(params[:id])
   end
 
   def link_params
-    params.require(:link).permit(:title, :url)
+    params.require(:link).permit(:title, :url, :photo)
   end
 end

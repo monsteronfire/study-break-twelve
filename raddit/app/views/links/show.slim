@@ -1,6 +1,7 @@
 p = @link.title
 p = @link.url
-
-
+= image_tag(@link.photo)
 = link_to 'Delete link', link_path(@link), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
-= link_to 'Back to All', links_path
+
+.action-band
+  = link_to 'Back to All', links_path
