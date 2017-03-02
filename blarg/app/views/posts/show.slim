@@ -1,0 +1,10 @@
+p = @post.title
+p = @post.body
+
+p Submitted by
+p = @post.user.email
+p = time_ago_in_words(@post.created_at)
+p ago
+
+= link_to 'Edit post', edit_post_path(@post)
+= link_to 'Delete post', post_path(@post), method: :delete, data: { confirm: "Are you sure?" }
