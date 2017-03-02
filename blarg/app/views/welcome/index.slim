@@ -1,0 +1,6 @@
+h1 Welcome
+
+ul
+  li = link_to 'Blog', posts_path
+  - if user_signed_in?
+    li = link_to 'Add post', new_post_path
