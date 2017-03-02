@@ -1,4 +1,9 @@
 = simple_form_for @post do |f|
+  - if @post.errors.any?
+    p = pluralize(@post.errors.count, "error")
+    ul
+      - @post.errors.full_messages.each do |msg|
+        p = msg
   = f.input :title
   = f.text_area :body
   = f.button :submit, class: 'btn btn-primary'
