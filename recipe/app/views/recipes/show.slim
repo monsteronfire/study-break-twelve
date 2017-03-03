@@ -3,6 +3,12 @@ p = @recipe.description
 p = @recipe.user.email
 = image_tag(@recipe.picture)
 
+- @recipe.ingredients.each do |ingredient|
+  p = ingredient.name
+
+- @recipe.directions.each do |direction|
+  p = direction.step
+
 ul.internal_nav
   li = link_to 'Edit recipe', edit_recipe_path(@recipe), class: 'btn btn-primary'
   li = link_to 'Delete recipe', recipe_path(@recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
