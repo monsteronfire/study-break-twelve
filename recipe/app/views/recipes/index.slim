@@ -1,0 +1,6 @@
+.internal-nav
+  = link_to 'Add new recipe', new_recipe_path, class: 'btn btn-primary'
+ul
+  - @recipes.each do |recipe|
+    li
+      p = link_to recipe.title, recipe_path(recipe)
