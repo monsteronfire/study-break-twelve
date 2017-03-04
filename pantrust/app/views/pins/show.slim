@@ -1,0 +1,9 @@
+h3 = @pin.title
+p = @pin.description
+p = @pin.user.email
+= image_tag(@pin.photo)
+
+
+ul.links
+  li = link_to 'Edit pin', edit_pin_path(@pin), class: 'btn btn-default'
+  li = link_to 'Delete pin', pin_path(@pin), method: :delete, class: 'btn btn-danger'

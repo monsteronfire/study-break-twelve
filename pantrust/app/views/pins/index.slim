@@ -1,0 +1,7 @@
+h1 Pinboard
+
+= link_to "Add new pin", new_pin_path, class: 'btn btn-primary'
+
+ul
+- @pins.each do |pin|
+  li = link_to pin.title, pin_path(pin)
