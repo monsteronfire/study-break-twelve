@@ -1,7 +1,11 @@
 h1 Pinboard
 
-= link_to "Add new pin", new_pin_path, class: 'btn btn-primary'
+- if user_signed_in?
+  = link_to "Add new pin", new_pin_path, class: 'btn btn-primary'
 
-ul
-- @pins.each do |pin|
-  li = link_to pin.title, pin_path(pin)
+ul.pins
+  - @pins.each do |pin|
+    li.pin
+      h3 = link_to pin.title, pin_path(pin), class: 'pin-title'
+      = image_tag(pin.photo)
+      p = pin.user.email

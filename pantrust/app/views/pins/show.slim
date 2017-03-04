@@ -3,7 +3,10 @@ p = @pin.description
 p = @pin.user.email
 = image_tag(@pin.photo)
 
+- if user_signed_in?
+  ul.links
+    li = link_to 'Edit pin', edit_pin_path(@pin), class: 'btn btn-default'
+    li = link_to 'Delete pin', pin_path(@pin), method: :delete, class: 'btn btn-danger'
 
-ul.links
-  li = link_to 'Edit pin', edit_pin_path(@pin), class: 'btn btn-default'
-  li = link_to 'Delete pin', pin_path(@pin), method: :delete, class: 'btn btn-danger'
+.internal-links
+  = link_to 'Back to Pinboard', pins_path

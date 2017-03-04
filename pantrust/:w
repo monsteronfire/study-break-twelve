@@ -1,0 +1,17 @@
+.pins {
+}
+
+.pin {
+  list-style-type: none;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.pin-title {
+  display: block;
+  text-align: center;
+}
+
+.pin img {
+  width: 100%;
+}
