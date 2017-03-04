@@ -3,6 +3,11 @@ p = @pin.description
 p = @pin.user.email
 = image_tag(@pin.photo)
 
+= link_to "upvote", like_pin_path(@pin), method: :put
+= @pin.get_upvotes.size
+= link_to "downvote", dislike_pin_path(@pin), method: :put
+= @pin.get_downvotes.size
+
 - if user_signed_in?
   ul.links
     li = link_to 'Edit pin', edit_pin_path(@pin), class: 'btn btn-default'
