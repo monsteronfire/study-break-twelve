@@ -1,0 +1,7 @@
+h1 All movies
+
+- if user_signed_in?
+  = link_to 'Add new movie', new_movie_path, class: 'btn btn-primary'
+
+- @movies.each do |movie|
+  p = movie.title

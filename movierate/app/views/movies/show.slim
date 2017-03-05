@@ -1,0 +1,11 @@
+p = @movie.title
+p = @movie.description
+p = @movie.director
+p = @movie.rating
+= image_tag(@movie.poster)
+
+
+ul.movie-links
+  - if user_signed_in?
+    li = link_to 'Edit movie', edit_movie_path(@movie)
+    li = link_to 'Delete movie', movie_path(@movie), method: :delete

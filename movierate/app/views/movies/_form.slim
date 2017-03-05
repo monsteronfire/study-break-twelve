@@ -1,0 +1,7 @@
+= simple_form_for @movie do |f|
+  = f.input :title
+  = f.text_area :description
+  = f.input :director
+  = f.input :rating
+  = f.input :poster
+  = f.button :submit, class: 'btn btn-primary'
