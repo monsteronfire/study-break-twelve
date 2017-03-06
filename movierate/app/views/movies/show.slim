@@ -9,3 +9,8 @@ ul.movie-links
   - if user_signed_in?
     li = link_to 'Edit movie', edit_movie_path(@movie)
     li = link_to 'Delete movie', movie_path(@movie), method: :delete
+
+h3 Reviews
+= render 'reviews/review'
+- if user_signed_in?
+  = render 'reviews/form'

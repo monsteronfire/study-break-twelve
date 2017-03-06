@@ -4,4 +4,4 @@ h1 All movies
   = link_to 'Add new movie', new_movie_path, class: 'btn btn-primary'
 
 - @movies.each do |movie|
-  p = movie.title
+  p = link_to movie.title, movie_path(movie)
