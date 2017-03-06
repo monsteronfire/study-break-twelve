@@ -13,4 +13,5 @@ ul.movie-links
 h3 Reviews
 = render 'reviews/review'
 - if user_signed_in?
-  = render 'reviews/form'
+  .review_actions
+    = link_to "Add a review for this movie", new_movie_review_path(@movie), class: 'btn btn-primary'
