@@ -1,0 +1,7 @@
+button = link_to 'Add new list', new_todo_list_path
+
+.list-wrapper
+  ul
+    - @todo_lists.each do |list|
+      p = link_to list.title, todo_list_path(list)
+      p = list.description

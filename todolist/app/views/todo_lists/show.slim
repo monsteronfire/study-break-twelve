@@ -1,0 +1,13 @@
+p = @todo_list.title
+p = @todo_list.description
+
+.list-items
+  = render 'todo_items/form'
+.items
+  ul
+    = render @todo_list.todo_items
+
+
+.links
+  ul
+    li = link_to 'Back to lists page', todo_lists_path
