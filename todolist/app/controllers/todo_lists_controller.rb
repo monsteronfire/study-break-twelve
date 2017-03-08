@@ -26,6 +26,11 @@ class TodoListsController < ApplicationController
   end
 
   def update
+    if @todo_list.update
+      redirect_to @todo_list
+    else
+      render 'edit'
+    end
   end
 
   def destroy

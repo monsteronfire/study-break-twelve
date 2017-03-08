@@ -9,13 +9,18 @@ class TodoItemsController < ApplicationController
 
   def destroy
     @todo_item.destroy
+    redirect_to todo_lists_path
+  end
+
+  def complete
+    @todo_item.update_attribute(:completed_at, Time.now)
     redirect_to @todo_list
   end
 
   private
 
   def set_todo_item
-    @todo_item = TodoItem.find(params[:id])
+    @todo_item = @todo_list.todo_items.find(params[:id])
   end
 
   def set_todo_list
@@ -23,6 +28,6 @@ class TodoItemsController < ApplicationController
   end
 
   def todo_item_params
-    params.require(:todo_item).permit(:content, :todo_list_id)
+    params.require(:todo_item).permit(:id, :content)
   end
 end
