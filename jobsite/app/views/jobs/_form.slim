@@ -1,0 +1,11 @@
+= simple_form_for @job do |f|
+  - if @job.errors.any?
+    p = pluralize(@job.errors.count, "error")
+    ul
+      - @job.errors.full_messages.each do |msg|
+        p = msg
+  = f.input :title
+  = f.text_area :description
+  = f.input :company
+  = f.input :url
+  = f.button :submit

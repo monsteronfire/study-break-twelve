@@ -1,0 +1,8 @@
+p = @job.title
+p = @job.description
+p = @job.company
+= link_to "Company site", @job.url
+
+.links
+  - if user_signed_in?
+    = link_to "edit job posting", edit_job_path(@job)
