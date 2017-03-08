@@ -1,5 +1,5 @@
-li = todo_item.content
-
-.links
-  = link_to 'delete', [todo_item.todo_list, todo_item]
-  /= link_to 'mark as complete', complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch
+ul
+  - @todo_list.todo_items.each do |item|
+    li
+      p = item.content
+      p = link_to "Delete", [item.todo_list, item], method: :delete, data: { confirm: "Are you sure?" }

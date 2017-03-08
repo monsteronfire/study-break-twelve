@@ -16,7 +16,7 @@ class TodoListsController < ApplicationController
     @todo_list = TodoList.new(todo_list_params)
 
     if @todo_list.save
-      redirect_to todo_lists_path
+      redirect_to @todo_list
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
   end
 
   def update
-    if @todo_list.update
+    if @todo_list.update(todo_list_params)
       redirect_to @todo_list
     else
       render 'edit'
