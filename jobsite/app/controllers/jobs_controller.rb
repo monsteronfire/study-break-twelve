@@ -27,7 +27,7 @@ class JobsController < ApplicationController
   end
 
   def update
-    if @job.update
+    if @job.update(job_params)
       redirect_to @job
     else
       render 'edit'
@@ -46,6 +46,6 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description, :company, :url, :user_id)
+    params.require(:job).permit(:title, :description, :company, :url, :user_id, :category_id)
   end
 end

@@ -4,6 +4,7 @@
     ul
       - @job.errors.full_messages.each do |msg|
         p = msg
+  = f.collection_select :category_id, Category. all, :id, :name, { prompt: "Choose a category" }
   = f.input :title
   = f.text_area :description
   = f.input :company

@@ -2,6 +2,7 @@ p = @job.title
 p = @job.description
 p = @job.company
 = link_to "Company site", @job.url
+p = @job.category.name
 
 .links
   - if user_signed_in?
